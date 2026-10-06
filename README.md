@@ -26,3 +26,9 @@ We will primarily focus on the C2 views to provide an overarching overview.
 
 ## Failure scenarios
 See [Failure Scenarios](failure-scenarios.md).
+
+## Fitness Functions
+See [Fitness Functions](fitness-functions.md).
+
+## Stressors
+See [Stressors](stressors.md).
