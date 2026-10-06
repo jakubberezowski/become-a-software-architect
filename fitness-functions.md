@@ -1,10 +1,15 @@
 # Fitness functions
 
+> What capabilities are critical for the success of the Make The Grade system? How would you objectively measure those capabilities to demonstrate you are meeting them?
+> 
+> Describe the fitness functions you would use within your architectural solution. Focus on the algorithm, not the implementation of the fitness function. For example, how would you verify that no answers are ever lost? 
+
+
 ## Critical requirements mapped to architecture characteristics that support them:
 1. **No acknowledged answer is ever lost or duplicated** (data integrity/durability)
 1. **The system holds up at peak concurrency** (scalability, responsiveness)
 1. **Grading is consistent and every result is traceable** (auditability)
-1. **System follows the principle of the least privilege when sharing data between components and users** (security)
+1. **It is critical to protect answer data from unauthorized access** (security)
 1. **Failures recover without student-visible data loss** (reliability)
 1. **System is ready in 6 months** (feasibility)
 
@@ -27,7 +32,7 @@ Results database schema has a constraint that prevents duplicate records for the
 1. Verify LLM grading results when receiving identical answers are cached and reused, even if both answers are processed in parallel. Measure that only one of such calls was actually processed by LLM.
 1. Verify that every graded answer has traceable answer recording and grading log entries. 
 
-### System follows the principle of the least privilege when sharing data between components and users _(security)_
+### It is critical to protect answer data from unauthorized access _(security)_
 1. Verify that configuration prevents network connectivity between components not supposed to have one
 1. Verify that access is limited to read/write only as necessary
 1. Verify that user access scope match their role and access to restricted data is not allowed
