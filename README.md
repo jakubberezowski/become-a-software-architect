@@ -185,6 +185,7 @@
 - The end marker arrives out of order: The attempt remains incomplete until all expected distinct answers have reached their required final state.
 
 
+# Fitness functions
 
 ## Critical requirements mapped to architecture characteristics that support them:
 1. **No acknowledged answer is ever lost or duplicated** (data integrity/durability)
