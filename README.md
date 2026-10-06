@@ -2,11 +2,28 @@
 
 ## Architectural Characteristics
 
-See [Architectural Characteristics](architectural-characteristics.md).
+Driving characteristics:
+- Data Integrity/Durability
+- Security
+- Feasibility
+  
+Supporting characteristics:
+- Scalability
+- Reliability
+- Responsiveness
+- Auditability
+
+More details - see [Architectural Characteristics](architectural-characteristics.md).
 
 ## Architecture Style
 
-See [Architecture Style ADR](architecture-style-adr.md).
+We will use a service-based architecture with domain services, with these boundaries:
+
+- **Admin domain**: Roster maintenance, test and answer-key maintenance, and scheduling. It is low-load and stays plain service-based.
+- **Reporting domain**: Generates student, teacher, school, and question-validation reports after testing. It stays service-based and reads from the consolidated database.
+- **Test-Taker domain**: Presents questions, captures answers, and durably stores them. It is designed as an independently deployable, scalable, isolated unit so its internal style can differ from the others. Given the scale, likely will be implemented in a manner inspired from service-based architecture to avoid DB reads and writes during massively parallel operations.
+
+More details - [Architecture Style ADR](architecture-style-adr.md).
 
 ## Architecture
 
