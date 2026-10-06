@@ -24,6 +24,9 @@ We will primarily focus on the C2 views to provide an overarching overview.
 
 ![Answer Capturer Physical](c4-answer-capturer.excalidraw.png)
 
+## Transaction Strategy
+See [Transaction Strategy](transaction-strategy.md).
+
 ## Failure scenarios
 See [Failure Scenarios](failure-scenarios.md).
 
